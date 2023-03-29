@@ -10,16 +10,43 @@
 int main()
 {
 	setlocale(LC_ALL, "Russian");
-	Dron* a = new Dron("Россия", "ФБВ-1");
-	Accelerator* acc = new Accelerator;
-	TransportInformation* TI = new TransportInformation;
-	RemoteAccessProxy* RAS = new RemoteAccessProxy;
-	a->AddSensor(acc);
-	a->GetSensorInfo(0);
-	a->AddSystem(TI);
-	a->AddSystem(RAS);
-	RAS->GetSystems(a->ReturnSystems());
-	a->ActivateSystem(1);
+	Dron* a = new Dron("Россия", "ФБВ-1"); //Создание Дрона
+	Accelerator* acc = new Accelerator; // Создание датчика ускорения
+	Barometr* bar = new Barometr; //Создание датчика высоты 
+	Gyroscope* gyro = new Gyroscope; //Создание датчика угла наклона
+	Compas* com = new Compas; // Создание датчика направления движения
+	CipherSystem* CS = new CipherSystem; //Создание системы шифрования
+	FlySystem* FS = new FlySystem; //Создание системы управления поллетом
+	NeutrillizeSystem* NS = new NeutrillizeSystem; //Создание системы уничтожения цели
+	OppositionSystem* OS = new OppositionSystem; //Создание системы противодействия перехвату
+	RemoveInfoSystem* RIS = new RemoveInfoSystem; //Создание системы удаления информации
+	ScanSystem* ScanS = new ScanSystem; //Создание системы сканирования
+	StabillizeSystem* StabS = new StabillizeSystem; //Создание системы стабилизации полета
+	TargetDetectionSystem* TDS = new TargetDetectionSystem; //Создание системы определения цели
+	TransportSuppliesSystem* TSS = new TransportSuppliesSystem; //Создание системы доставки груза
+	TransportInformation* TIS = new TransportInformation; //Создание системы передачи информации 
+	RemoteAccessProxy* RAS = new RemoteAccessProxy; //Создание системы удаленного доступа с использованием класса-заместителя (proxy)
+	a->AddSensor(acc); //-----------------------------
+	a->AddSensor(bar); //Добавление датчиков к дрону
+	a->AddSensor(gyro); //
+	a->AddSensor(com); //-----------------------------
+	a->GetSensorInfo(0); //+++++++++++++++++++++++++++++++++++++++
+	a->GetSensorInfo(1); //Вывод информации с датчиков на экран
+	a->GetSensorInfo(2); //
+	a->GetSensorInfo(3); //+++++++++++++++++++++++++++++++++++++++
+	a->AddSystem(CS); //-------------------------------------------
+	a->AddSystem(FS); //
+	a->AddSystem(NS); //
+	a->AddSystem(OS); //
+	a->AddSystem(RIS); //
+	a->AddSystem(ScanS); //Добавлление систем к дрону
+	a->AddSystem(StabS); //
+	a->AddSystem(TDS); //
+	a->AddSystem(TSS); //
+	a->AddSystem(TIS); //
+	a->AddSystem(RAS); //------------------------------------------
+	RAS->GetSystems(a->ReturnSystems()); //Получение системой удаленного доступа информации о доступных системах дрона
+	a->ActivateSystem(10); //Активирование системы удаленного доступа
 	_getch();
 }
 
