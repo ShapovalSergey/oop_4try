@@ -6,7 +6,8 @@
 #include "Systems.h"
 #include "Dron.h"
 #include "Cargos.h"
-
+#include "CompositeEssential.h"
+#include "LeafEssential.h"
 
 int main()
 {
@@ -33,6 +34,33 @@ int main()
 	Adapter* adp = new Adapter(t);
 	a->AddSensor(adp);
 	a->GetSensorInfo(0);
+
+
+	CompositeEssential CE;
+	LeafEssential* prop1 = new LeafEssential("Пропеллер1");
+	LeafEssential* prop2 = new LeafEssential("Пропеллер2");
+	LeafEssential* prop3 = new LeafEssential("Пропеллер3");
+	LeafEssential* prop4 = new LeafEssential("Пропеллер4");
+	LeafEssential* engine = new LeafEssential("Двигатель");
+	LeafEssential* stoi = new LeafEssential("Стойки");
+	CE.Add(prop1);
+	CE.Add(prop2);
+	CE.Add(prop3);
+	CE.Add(prop4);
+	CE.Add(engine);
+	CE.Add(stoi);
+	printf("Части дрона:\n");
+	CE.Display();
+	CE.Remove(prop4);
+	printf("Части дрона после изменений:\n");
+	CE.Display();
+
+
+
+
+
+
+
 
 	CipherSystem* CS = new CipherSystem; //Создание системы шифрования
 	FlySystem* FS = new FlySystem; //Создание системы управления поллетом

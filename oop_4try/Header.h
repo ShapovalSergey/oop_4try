@@ -7,4 +7,5 @@
 #include <stdio.h>
 #include <string> 
 #include <random> 
+#include <list>
 using namespace std;
