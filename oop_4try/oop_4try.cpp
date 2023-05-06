@@ -5,6 +5,7 @@
 #include "Sensors.h"
 #include "Systems.h"
 #include "Dron.h"
+#include "Cargos.h"
 
 
 int main()
@@ -15,6 +16,24 @@ int main()
 	Barometr* bar = new Barometr; //Создание датчика высоты 
 	Gyroscope* gyro = new Gyroscope; //Создание датчика угла наклона
 	Compas* com = new Compas; // Создание датчика направления движения
+
+
+	DroneFrame* DF = new DroneFrame("Каркас",25);
+	Patrons* p = new Patrons(DF,"Патроны",5);
+	Battery* b = new Battery(DF,"Аккумулятор",15);
+	DF->GetInfo();
+	p->GetInfo();
+	b->GetInfo();
+	Patrons* p1= new Patrons(DF, "Патроны", 10);
+	p1->GetInfo();
+
+
+
+	Temperature *t = new Temperature;
+	Adapter* adp = new Adapter(t);
+	a->AddSensor(adp);
+	a->GetSensorInfo(0);
+
 	CipherSystem* CS = new CipherSystem; //Создание системы шифрования
 	FlySystem* FS = new FlySystem; //Создание системы управления поллетом
 	NeutrillizeSystem* NS = new NeutrillizeSystem; //Создание системы уничтожения цели
@@ -30,10 +49,10 @@ int main()
 	a->AddSensor(bar); //Добавление датчиков к дрону
 	a->AddSensor(gyro); //
 	a->AddSensor(com); //-----------------------------
-	a->GetSensorInfo(0); //+++++++++++++++++++++++++++++++++++++++
-	a->GetSensorInfo(1); //Вывод информации с датчиков на экран
-	a->GetSensorInfo(2); //
-	a->GetSensorInfo(3); //+++++++++++++++++++++++++++++++++++++++
+	a->GetSensorInfo(1); //+++++++++++++++++++++++++++++++++++++++
+	a->GetSensorInfo(2); //Вывод информации с датчиков на экран
+	a->GetSensorInfo(3); //
+	a->GetSensorInfo(4); //+++++++++++++++++++++++++++++++++++++++
 	a->AddSystem(CS); //-------------------------------------------
 	a->AddSystem(FS); //
 	a->AddSystem(NS); //

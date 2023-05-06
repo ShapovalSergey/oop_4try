@@ -140,16 +140,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Accelerator.cpp" />
+    <ClCompile Include="Adapter.cpp" />
+    <ClCompile Include="AdditionalCargo.cpp" />
     <ClCompile Include="Barometr.cpp" />
+    <ClCompile Include="Battery.cpp" />
+    <ClCompile Include="Cargo.cpp" />
     <ClCompile Include="CipherSystem.cpp" />
     <ClCompile Include="Compas.cpp" />
     <ClCompile Include="Dron.cpp" />
+    <ClCompile Include="DroneFrame.cpp" />
     <ClCompile Include="FlySystem.cpp" />
     <ClCompile Include="Gyroscope.cpp" />
     <ClCompile Include="ISystem.cpp" />
     <ClCompile Include="NeutrillizeSystem.cpp" />
     <ClCompile Include="oop_4try.cpp" />
     <ClCompile Include="OppositionSystem.cpp" />
+    <ClCompile Include="Patrons.cpp" />
     <ClCompile Include="RemoteAccessProxy.cpp" />
     <ClCompile Include="RemoteAccessSystem.cpp" />
     <ClCompile Include="RemoveInfoSystem.cpp" />
@@ -157,21 +163,29 @@
     <ClCompile Include="Sensor.cpp" />
     <ClCompile Include="StabillizeSystem.cpp" />
     <ClCompile Include="TargetDetectionSystem.cpp" />
+    <ClCompile Include="Temperature.cpp" />
     <ClCompile Include="TransportInformation.cpp" />
     <ClCompile Include="TransportSuppliesSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Accelerator.h" />
+    <ClInclude Include="Adapter.h" />
+    <ClInclude Include="AdditionalCargo.h" />
     <ClInclude Include="Barometr.h" />
+    <ClInclude Include="Battery.h" />
+    <ClInclude Include="Cargo.h" />
+    <ClInclude Include="Cargos.h" />
     <ClInclude Include="CipherSystem.h" />
     <ClInclude Include="Compas.h" />
     <ClInclude Include="Dron.h" />
+    <ClInclude Include="DroneFrame.h" />
     <ClInclude Include="FlySystem.h" />
     <ClInclude Include="Gyroscope.h" />
     <ClInclude Include="Header.h" />
     <ClInclude Include="ISystem.h" />
     <ClInclude Include="NeutrillizeSystem.h" />
     <ClInclude Include="OppositionSystem.h" />
+    <ClInclude Include="Patrons.h" />
     <ClInclude Include="RemoteAccessProxy.h" />
     <ClInclude Include="RemoteAccessSystem.h" />
     <ClInclude Include="RemoveInfoSystem.h" />
@@ -181,6 +195,7 @@
     <ClInclude Include="StabillizeSystem.h" />
     <ClInclude Include="Systems.h" />
     <ClInclude Include="TargetDetectionSystem.h" />
+    <ClInclude Include="Temperature.h" />
     <ClInclude Include="TransportInformation.h" />
     <ClInclude Include="TransportSuppliesSystem.h" />
   </ItemGroup>
