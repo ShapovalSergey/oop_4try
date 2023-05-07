@@ -17,43 +17,36 @@ int main()
 	Barometr* bar = new Barometr; //Создание датчика высоты 
 	Gyroscope* gyro = new Gyroscope; //Создание датчика угла наклона
 	Compas* com = new Compas; // Создание датчика направления движения
-
-
-	DroneFrame* DF = new DroneFrame("Каркас",25);
-	Patrons* p = new Patrons(DF,"Патроны",5);
-	Battery* b = new Battery(DF,"Аккумулятор",15);
-	DF->GetInfo();
-	p->GetInfo();
-	b->GetInfo();
-	Patrons* p1= new Patrons(DF, "Патроны", 10);
-	p1->GetInfo();
-
-
-
-	Temperature *t = new Temperature;
-	Adapter* adp = new Adapter(t);
-	a->AddSensor(adp);
-	a->GetSensorInfo(0);
-
-
-	CompositeEssential CE;
-	LeafEssential* prop1 = new LeafEssential("Пропеллер1");
-	LeafEssential* prop2 = new LeafEssential("Пропеллер2");
-	LeafEssential* prop3 = new LeafEssential("Пропеллер3");
-	LeafEssential* prop4 = new LeafEssential("Пропеллер4");
-	LeafEssential* engine = new LeafEssential("Двигатель");
-	LeafEssential* stoi = new LeafEssential("Стойки");
-	CE.Add(prop1);
-	CE.Add(prop2);
-	CE.Add(prop3);
-	CE.Add(prop4);
-	CE.Add(engine);
-	CE.Add(stoi);
+	Temperature* t = new Temperature; //Создание датчика температуры
+	Adapter* adp = new Adapter(t); //Созданиие адаптера для работы с независимым датчиком как с обычным
+	a->AddSensor(adp); //Добавление датчика температуры в систему (через адаптеер)
+	a->GetSensorInfo(0); //Вывод информации о датчике темппературы на экран (стендартным длля всех датчиков методом)
+	DroneFrame* DF = new DroneFrame("Каркас",25); //Создание базового объекта - каркас дрона, к которому в последствии добавляются другие компоненты
+	Patrons* p = new Patrons(DF,"Патроны",5); //Добавление груза патроны к базовому грузу
+	Battery* b = new Battery(DF,"Аккумулятор",15); //Добавление груза аккумулятор к базовому грузу
+	DF->GetInfo(); //Вывод информации о каркасе
+	p->GetInfo(); //Вывод информации о патронах
+	b->GetInfo(); //Вывод информации об аккумуляторе
+	Patrons* p1= new Patrons(DF, "Патроны", 10); //Добавление новых патрон к базовому грузу
+	p1->GetInfo(); //Вывод информации о новых патронах
+	CompositeEssential CE; //Создание компоновщика необходдимых частей
+	LeafEssential* prop1 = new LeafEssential("Пропеллер1"); //Создание пропеллера 1
+	LeafEssential* prop2 = new LeafEssential("Пропеллер2"); //Создание пропеллера 2
+	LeafEssential* prop3 = new LeafEssential("Пропеллер3"); //Создание пропеллера 3
+	LeafEssential* prop4 = new LeafEssential("Пропеллер4"); //Создание пропеллера 4
+	LeafEssential* engine = new LeafEssential("Двигатель"); //Создание двигателя
+	LeafEssential* stoi = new LeafEssential("Стойки");  //Создание стойки для посадки 
+	CE.Add(prop1); //Добавление пропеллера 1
+	CE.Add(prop2); //Добавление пропеллера 2
+	CE.Add(prop3); //Добавление пропеллера 3
+	CE.Add(prop4); //Добавление пропеллера 4
+	CE.Add(engine); //Добавление двигателя
+	CE.Add(stoi); //Добавление стойки для посадки
 	printf("Части дрона:\n");
-	CE.Display();
-	CE.Remove(prop4);
+	CE.Display(); //Вывод списка частей, установленных на дроне
+	CE.Remove(prop4); //Удаление проппеллера 4
 	printf("Части дрона после изменений:\n");
-	CE.Display();
+	CE.Display(); //Вывод списка послле удаления
 
 
 
