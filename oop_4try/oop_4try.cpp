@@ -1,13 +1,17 @@
 ﻿// oop_4try.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 #pragma once
-#include "Header.h"
+//#include "Header.h"
+#include "Facade.h"
 #include "Sensors.h"
 #include "Systems.h"
-#include "Dron.h"
+//#include "Dron.h"
 #include "Cargos.h"
-#include "CompositeEssential.h"
+//#include "CompositeEssential.h"
 #include "LeafEssential.h"
+
+
+
 
 int main()
 {
@@ -19,19 +23,18 @@ int main()
 	Compas* com = new Compas("C4-01-90"); // Создание датчика направления движения
 	Temperature* t = new Temperature("T5-66-01"); //Создание датчика температуры
 	Adapter* adp = new Adapter(t); //Созданиие адаптера для работы с независимым датчиком как с обычным
-	Sensor* s_adp = new Sensor(adp);
-	Sensor* s_acc = new Sensor(acc);
-	Sensor* s_bar = new Sensor(bar);
-	Sensor* s_gyro = new Sensor(gyro);
-	Sensor* s_com = new Sensor(com);
+	vector<Sensor*> sen; 
+	vector<Cargo*> car;
+	sen.push_back(new Sensor(adp));
+	sen.push_back(new Sensor(acc));
+	sen.push_back(new Sensor(bar));
+	sen.push_back(new Sensor(gyro));
+	sen.push_back(new Sensor(com));
 	DroneFrame* DF = new DroneFrame("Каркас",25); //Создание базового объекта - каркас дрона, к которому в последствии добавляются другие компоненты
-	Patrons* p = new Patrons(DF,"Патроны",5); //Добавление груза патроны к базовому грузу
-	Battery* b = new Battery(DF,"Аккумулятор",15); //Добавление груза аккумулятор к базовому грузу
-	DF->GetInfo(); //Вывод информации о каркасе
-	p->GetInfo(); //Вывод информации о патронах
-	b->GetInfo(); //Вывод информации об аккумуляторе
-	Patrons* p1= new Patrons(DF, "Патроны", 10); //Добавление новых патрон к базовому грузу
-	p1->GetInfo(); //Вывод информации о новых патронах
+	car.push_back(new DroneFrame("Каркас", 25));
+	car.push_back(new Patrons(DF, "Патроны", 5));
+	car.push_back(new Battery(DF, "Аккумулятор", 15));
+	car.push_back(new Patrons(DF, "Патроны", 10));
 	CompositeEssential CE; //Создание компоновщика необходдимых частей
 	LeafEssential* prop1 = new LeafEssential("Пропеллер1"); //Создание пропеллера 1
 	LeafEssential* prop2 = new LeafEssential("Пропеллер2"); //Создание пропеллера 2
@@ -45,19 +48,6 @@ int main()
 	CE.Add(prop4); //Добавление пропеллера 4
 	CE.Add(engine); //Добавление двигателя
 	CE.Add(stoi); //Добавление стойки для посадки
-	printf("Части дрона:\n");
-	CE.Display(); //Вывод списка частей, установленных на дроне
-	CE.Remove(prop4); //Удаление проппеллера 4
-	printf("Части дрона после изменений:\n");
-	CE.Display(); //Вывод списка послле удаления
-
-
-
-
-
-
-
-
 	CipherSystem* CS = new CipherSystem; //Создание системы шифрования
 	FlySystem* FS = new FlySystem; //Создание системы управления поллетом
 	NeutrillizeSystem* NS = new NeutrillizeSystem; //Создание системы уничтожения цели
@@ -69,16 +59,10 @@ int main()
 	TransportSuppliesSystem* TSS = new TransportSuppliesSystem; //Создание системы доставки груза
 	TransportInformation* TIS = new TransportInformation; //Создание системы передачи информации 
 	RemoteAccessProxy* RAS = new RemoteAccessProxy; //Создание системы удаленного доступа с использованием класса-заместителя (proxy)
-	a->AddSensor(s_adp); //Добавление датчика температуры в систему (через адаптеер)
-	a->AddSensor(s_acc); //-----------------------------
-	a->AddSensor(s_bar); //Добавление датчиков к дрону
-	a->AddSensor(s_gyro); //
-	a->AddSensor(s_com); //-----------------------------
-	a->GetSensorInfo(1); //+++++++++++++++++++++++++++++++++++++++
-	a->GetSensorInfo(2); //Вывод информации с датчиков на экран
-	a->GetSensorInfo(3); //
-	a->GetSensorInfo(4); //+++++++++++++++++++++++++++++++++++++++
-	a->GetSensorInfo(0); //Вывод информации о датчике темппературы на экран (стендартным длля всех датчиков методом)
+	for (int i = 0; i < sen.size(); i++)
+	{
+		a->AddSensor(sen[i]);
+	}
 	a->AddSystem(CS); //-------------------------------------------
 	a->AddSystem(FS); //
 	a->AddSystem(NS); //
@@ -90,8 +74,42 @@ int main()
 	a->AddSystem(TSS); //
 	a->AddSystem(TIS); //
 	a->AddSystem(RAS); //------------------------------------------
-	RAS->GetSystems(a->ReturnSystems()); //Получение системой удаленного доступа информации о доступных системах дрона
-	a->ActivateSystem(10); //Активирование системы удаленного доступа
+	
+	
+	
+	Facade* f = new Facade(a,DF,CE,sen,car);
+	int mode = 0;
+	while (mode!=5)
+	{
+		printf("Выберите, что вы хотите сделать\n1)Получить информацию с датчиков\n2)Получить информацию о деталях\n3)Получить информацию о грузах\n4)Подключиться удаленно к дрону\n5)Завершить работу\n");
+		scanf("%d", &mode); 
+		if (mode==1)
+		{
+			for (int i = 0; i < f->RetSenSize(); i++)
+			{
+				f->GetSensorInfo(i);
+			}
+		}
+		else if (mode==2)
+		{
+			f->GetEssentialInfo();
+		}
+		else if (mode == 3)
+		{
+			for (int i = 0; i < f->RetCarSize(); i++)
+			{
+				f->GetCargoInfo(i);
+			}
+		}
+		else if (mode == 4)
+		{
+			RAS->GetSystems(a->ReturnSystems());
+			f->DronActivateSystem(10);
+		}
+	}
+	
+	
+	
 	_getch();
 }
 

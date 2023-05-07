@@ -151,6 +151,7 @@
     <ClCompile Include="Dron.cpp" />
     <ClCompile Include="DroneFrame.cpp" />
     <ClCompile Include="Essential.cpp" />
+    <ClCompile Include="Facade.cpp" />
     <ClCompile Include="FlySystem.cpp" />
     <ClCompile Include="Gyroscope.cpp" />
     <ClCompile Include="ISystem.cpp" />
@@ -185,6 +186,7 @@
     <ClInclude Include="Dron.h" />
     <ClInclude Include="DroneFrame.h" />
     <ClInclude Include="Essential.h" />
+    <ClInclude Include="Facade.h" />
     <ClInclude Include="FlySystem.h" />
     <ClInclude Include="Gyroscope.h" />
     <ClInclude Include="Header.h" />
