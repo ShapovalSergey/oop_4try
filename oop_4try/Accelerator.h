@@ -1,11 +1,18 @@
 #pragma once
-#include "Sensor.h"
+#include "SensorImp.h"
 class Accelerator :
-    public Sensor
+    public SensorImp
 {
+private: 
+	double value;
+	string name;
+	double Analyze();
 public:
-	void GetInfo();
-	void GiveInfo();
+	Accelerator(string name);
+	double GetValue();
+	string GetName();
+	string GetType();
+	void WriteValue();
 
 };
 

@@ -30,5 +30,5 @@ void Dron::AddSensor(Sensor* newSensor)
 
 void Dron::GetSensorInfo(int number)
 {
-	Sensor1[number]->GiveInfo();
+	Sensor1[number]->PrintInfo();
 }

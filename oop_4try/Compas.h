@@ -1,10 +1,18 @@
 #pragma once
-#include "Sensor.h"
+#include "SensorImp.h"
 class Compas :
-    public Sensor
+	public SensorImp
 {
+private:
+	double value;
+	string name;
+	double Analyze();
 public:
-	void GetInfo();
-	void GiveInfo();
+	Compas(string name);
+	double GetValue();
+	string GetName();
+	string GetType();
+	void WriteValue();
 };
+
 

@@ -1,14 +1,16 @@
 #pragma once
-#include "Sensor.h"
+#include "SensorImp.h"
 #include "Temperature.h"
 class Adapter :
-    public Sensor
+    public SensorImp
 {
 private:
     Temperature* temp;
 public:
-    virtual void GetInfo();
-    virtual void GiveInfo();
+    double GetValue();
+    string GetName();
+    string GetType();
+    void WriteValue();
     Adapter(Temperature *t);
 };
 

@@ -1,14 +1,12 @@
 #pragma once
 #include "Header.h"
+#include "SensorImp.h"
 class Sensor
 {
 private:
-	string name;
-	string type;
+	SensorImp* imp;
 public:
-	Sensor() {};
-	Sensor(string name, string type);
-	virtual void GetInfo() = 0;
-	virtual void GiveInfo() = 0;
+	Sensor(SensorImp* imp);
+	virtual void PrintInfo();
 	~Sensor();
 };

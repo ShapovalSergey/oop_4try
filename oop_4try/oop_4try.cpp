@@ -13,14 +13,17 @@ int main()
 {
 	setlocale(LC_ALL, "Russian");
 	Dron* a = new Dron("Россия", "ФБВ-1"); //Создание Дрона
-	Accelerator* acc = new Accelerator; // Создание датчика ускорения
-	Barometr* bar = new Barometr; //Создание датчика высоты 
-	Gyroscope* gyro = new Gyroscope; //Создание датчика угла наклона
-	Compas* com = new Compas; // Создание датчика направления движения
-	Temperature* t = new Temperature; //Создание датчика температуры
+	Accelerator* acc = new Accelerator("A1-09-31"); // Создание датчика ускорения
+	Barometr* bar = new Barometr("B2-09-09"); //Создание датчика высоты 
+	Gyroscope* gyro = new Gyroscope("G3-98-67"); //Создание датчика угла наклона
+	Compas* com = new Compas("C4-01-90"); // Создание датчика направления движения
+	Temperature* t = new Temperature("T5-66-01"); //Создание датчика температуры
 	Adapter* adp = new Adapter(t); //Созданиие адаптера для работы с независимым датчиком как с обычным
-	a->AddSensor(adp); //Добавление датчика температуры в систему (через адаптеер)
-	a->GetSensorInfo(0); //Вывод информации о датчике темппературы на экран (стендартным длля всех датчиков методом)
+	Sensor* s_adp = new Sensor(adp);
+	Sensor* s_acc = new Sensor(acc);
+	Sensor* s_bar = new Sensor(bar);
+	Sensor* s_gyro = new Sensor(gyro);
+	Sensor* s_com = new Sensor(com);
 	DroneFrame* DF = new DroneFrame("Каркас",25); //Создание базового объекта - каркас дрона, к которому в последствии добавляются другие компоненты
 	Patrons* p = new Patrons(DF,"Патроны",5); //Добавление груза патроны к базовому грузу
 	Battery* b = new Battery(DF,"Аккумулятор",15); //Добавление груза аккумулятор к базовому грузу
@@ -66,14 +69,16 @@ int main()
 	TransportSuppliesSystem* TSS = new TransportSuppliesSystem; //Создание системы доставки груза
 	TransportInformation* TIS = new TransportInformation; //Создание системы передачи информации 
 	RemoteAccessProxy* RAS = new RemoteAccessProxy; //Создание системы удаленного доступа с использованием класса-заместителя (proxy)
-	a->AddSensor(acc); //-----------------------------
-	a->AddSensor(bar); //Добавление датчиков к дрону
-	a->AddSensor(gyro); //
-	a->AddSensor(com); //-----------------------------
+	a->AddSensor(s_adp); //Добавление датчика температуры в систему (через адаптеер)
+	a->AddSensor(s_acc); //-----------------------------
+	a->AddSensor(s_bar); //Добавление датчиков к дрону
+	a->AddSensor(s_gyro); //
+	a->AddSensor(s_com); //-----------------------------
 	a->GetSensorInfo(1); //+++++++++++++++++++++++++++++++++++++++
 	a->GetSensorInfo(2); //Вывод информации с датчиков на экран
 	a->GetSensorInfo(3); //
 	a->GetSensorInfo(4); //+++++++++++++++++++++++++++++++++++++++
+	a->GetSensorInfo(0); //Вывод информации о датчике темппературы на экран (стендартным длля всех датчиков методом)
 	a->AddSystem(CS); //-------------------------------------------
 	a->AddSystem(FS); //
 	a->AddSystem(NS); //

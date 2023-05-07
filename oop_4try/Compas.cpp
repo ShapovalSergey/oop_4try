@@ -1,11 +1,40 @@
 #include "Compas.h"
 
-void Compas::GetInfo() 
+Compas::Compas(string name)
 {
-	printf("Получил показания направления дрона\n"); 
+	this->name = name;;
+}
+
+
+double Compas::Analyze()
+{
+	double result;
+	srand(time(0));
+	int value = rand() % 360;
+	return value;
 };
 
-void Compas::GiveInfo() 
-{ 
-	printf("Передал показания направления дрона\n"); 
+string Compas::GetName()
+{
+	return name;
 };
+
+string Compas::GetType()
+{
+	return "Датчик направления по компасу";
+}
+
+void Compas::WriteValue()
+{
+	printf("Write to file\n");
+}
+
+double Compas::GetValue()
+{
+	double result = 0;
+	for (int i = 0; i < 10; i++)
+	{
+		result += this->Analyze();
+	}
+	return result / 10.0;
+}

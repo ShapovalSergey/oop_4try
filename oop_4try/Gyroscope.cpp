@@ -1,11 +1,40 @@
 #include "Gyroscope.h"
 
-void Gyroscope::GetInfo() 
+Gyroscope::Gyroscope(string name)
 {
-	printf("Получил показания угла наклона дрона\n"); 
+	this->name = name;;
+}
+
+
+double Gyroscope::Analyze()
+{
+	double result;
+	srand(time(0));
+	int value = rand() % 360;
+	return value;
 };
 
-void Gyroscope::GiveInfo() 
+string Gyroscope::GetName()
 {
-	printf("Передал показания угла наклона дрона\n"); 
+	return name;
 };
+
+string Gyroscope::GetType()
+{
+	return "Датчик угла наклона";
+}
+
+void Gyroscope::WriteValue()
+{
+	printf("Write to file\n");
+}
+
+double Gyroscope::GetValue()
+{
+	double result = 0;
+	for (int i = 0; i < 10; i++)
+	{
+		result += this->Analyze();
+	}
+	return result / 10.0;
+}
