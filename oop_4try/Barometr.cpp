@@ -1,11 +1,40 @@
 #include "Barometr.h"
 
-void Barometr::GetInfo() 
+Barometr::Barometr(string name)
 {
-	printf("Получил показания высоты дрона\n"); 
+	this->name = name;;
+}
+
+
+double Barometr::Analyze()
+{
+	double result;
+	srand(time(0));
+	int value = rand() % 800;
+	return value;
 };
 
-void Barometr::GiveInfo()
-{ 
-	printf("Передал показания высоты дрона\n"); 
+string Barometr::GetName()
+{
+	return name;
 };
+
+string Barometr::GetType()
+{
+	return "Датчик давления";
+}
+
+void Barometr::WriteValue()
+{
+	printf("Write to file\n");
+}
+
+double Barometr::GetValue()
+{
+	double result = 0;
+	for (int i = 0; i < 10; i++)
+	{
+		result += this->Analyze();
+	}
+	return result / 10.0;
+}

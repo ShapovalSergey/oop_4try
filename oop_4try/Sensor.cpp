@@ -1,7 +1,10 @@
 #include "Sensor.h"
 
-Sensor::Sensor(string name, string type)
+Sensor::Sensor(SensorImp* imp)
 {
-	this->name = name;
-	this->type = type;
+	this->imp = imp;
+}
+void Sensor::PrintInfo() 
+{
+	printf("\nПоказания датчика %s\nТип датчика: %s\nЗначение датчика: %.2lf\n\n",imp->GetName().c_str(),imp->GetType().c_str(),imp->GetValue());
 }

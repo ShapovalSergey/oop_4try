@@ -1,11 +1,40 @@
 #include "Accelerator.h"
 
-void Accelerator::GetInfo() 
+Accelerator::Accelerator(string name)
 {
-	printf("Получил показания скорости вращения пропелллеров\n");
+	this->name = name;;
+}
+
+
+double Accelerator::Analyze()
+{
+	double result;
+	srand(time(0));
+	int value = rand() % 1000;
+	return value;
 };
 
-void Accelerator::GiveInfo() 
+string Accelerator::GetName()
 { 
-	printf("Передал показания скорости вращения пропелллеров\n"); 
+	return name;
 };
+
+string Accelerator::GetType() 
+{
+	return "Датчик ускорения";
+}
+
+void Accelerator::WriteValue() 
+{
+	printf("Write to file\n");
+}
+
+double Accelerator::GetValue() 
+{
+	double result = 0;
+	for (int i = 0; i < 10; i++)
+	{
+		result += this->Analyze();
+	}
+	return result / 10.0;
+}

@@ -164,6 +164,7 @@
     <ClCompile Include="RemoveInfoSystem.cpp" />
     <ClCompile Include="ScanSystem.cpp" />
     <ClCompile Include="Sensor.cpp" />
+    <ClCompile Include="SensorImp.cpp" />
     <ClCompile Include="StabillizeSystem.cpp" />
     <ClCompile Include="TargetDetectionSystem.cpp" />
     <ClCompile Include="Temperature.cpp" />
@@ -197,6 +198,7 @@
     <ClInclude Include="RemoveInfoSystem.h" />
     <ClInclude Include="ScanSystem.h" />
     <ClInclude Include="Sensor.h" />
+    <ClInclude Include="SensorImp.h" />
     <ClInclude Include="Sensors.h" />
     <ClInclude Include="StabillizeSystem.h" />
     <ClInclude Include="Systems.h" />
