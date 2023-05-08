@@ -144,6 +144,9 @@
     <ClCompile Include="ConcreteCompositeEssential.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="SysLog.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dron.h">
@@ -285,6 +288,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="ConcreteCompositeEssential.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="SysLog.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

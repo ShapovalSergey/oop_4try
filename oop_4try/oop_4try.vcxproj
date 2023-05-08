@@ -176,6 +176,7 @@
     <ClCompile Include="SensorCreator.cpp" />
     <ClCompile Include="SensorImp.cpp" />
     <ClCompile Include="StabillizeSystem.cpp" />
+    <ClCompile Include="SysLog.cpp" />
     <ClCompile Include="TargetDetectionSystem.cpp" />
     <ClCompile Include="TDron.cpp" />
     <ClCompile Include="TemCreator.cpp" />
@@ -224,6 +225,7 @@
     <ClInclude Include="SensorImp.h" />
     <ClInclude Include="Sensors.h" />
     <ClInclude Include="StabillizeSystem.h" />
+    <ClInclude Include="SysLog.h" />
     <ClInclude Include="Systems.h" />
     <ClInclude Include="TargetDetectionSystem.h" />
     <ClInclude Include="TDron.h" />

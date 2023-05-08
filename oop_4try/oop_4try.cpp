@@ -11,7 +11,7 @@
 #include "Cargos.h"
 //#include "CompositeEssential.h"
 #include "LeafEssential.h"
-
+#include "SysLog.h"
 
 
 
@@ -86,6 +86,11 @@ int main()
 	a->AddSystem(RAS); //------------------------------------------*/
 	
 
+	SysLog* s = SysLog::Instance("Системный журнал1");
+	SysLog* d = SysLog::Instance("Системный журнал2");
+
+	s->run();
+	d->run();
 
 
 
