@@ -4,7 +4,7 @@
 //#include "Header.h"
 #include "Facade.h"
 #include "Sensors.h"
-//#include "AccCreator.h"
+#include "ArmyDronFactory.h"
 #include "Creators.h"
 #include "Systems.h"
 //#include "Dron.h"
@@ -17,33 +17,35 @@
 
 int main()
 {
-	SensorCreator* SC = new AccCreator();
+	/*SensorCreator* SC = new AccCreator();
 	SensorCreator* SC1 = new BarCreator();
 	SensorCreator* SC2 = new ComCreator();
 	SensorCreator* SC3 = new GyrCreator();
-	SensorCreator* SC4 = new TemCreator();
-
+	SensorCreator* SC4 = new TemCreator();*/
+	ArmyDronFactory* a = new ArmyDronFactory();
+	TDron* td = a->createDron("Россия", "ФБВ-1");
 	setlocale(LC_ALL, "Russian");
-	Dron* a = new Dron("Россия", "ФБВ-1"); //Создание Дрона
+	//Dron* a = new Dron("Россия", "ФБВ-1"); //Создание Дрона
 	/*Accelerator* acc = new Accelerator("A1-09-31"); // Создание датчика ускорения
 	Barometr* bar = new Barometr("B2-09-09"); //Создание датчика высоты 
 	Gyroscope* gyro = new Gyroscope("G3-98-67"); //Создание датчика угла наклона
 	Compas* com = new Compas("C4-01-90"); // Создание датчика направления движения
 	Temperature* t = new Temperature("T5-66-01"); //Создание датчика температуры
 	Adapter* adp = new Adapter(t); //Созданиие адаптера для работы с независимым датчиком как с обычным*/
-	vector<Sensor*> sen; 
-	vector<Cargo*> car;
+	/*vector<Sensor*> sen;
 	sen.push_back(SC4->Create("T5-66-01"));
 	sen.push_back(SC->Create("A1-09-31"));
 	sen.push_back(SC1->Create("B2-09-09"));
 	sen.push_back(SC3->Create("G3-98-67"));
-	sen.push_back(SC2->Create("C4-01-90"));
+	sen.push_back(SC2->Create("C4-01-90"));*/
+
+	vector<Cargo*> car;
 	DroneFrame* DF = new DroneFrame("Каркас",25); //Создание базового объекта - каркас дрона, к которому в последствии добавляются другие компоненты
 	car.push_back(new DroneFrame("Каркас", 25));
 	car.push_back(new Patrons(DF, "Патроны", 5));
 	car.push_back(new Battery(DF, "Аккумулятор", 15));
 	car.push_back(new Patrons(DF, "Патроны", 10));
-	CompositeEssential CE; //Создание компоновщика необходдимых частей
+	/*CompositeEssential CE; //Создание компоновщика необходдимых частей
 	LeafEssential* prop1 = new LeafEssential("Пропеллер1"); //Создание пропеллера 1
 	LeafEssential* prop2 = new LeafEssential("Пропеллер2"); //Создание пропеллера 2
 	LeafEssential* prop3 = new LeafEssential("Пропеллер3"); //Создание пропеллера 3
@@ -81,7 +83,7 @@ int main()
 	a->AddSystem(TDS); //
 	a->AddSystem(TSS); //
 	a->AddSystem(TIS); //
-	a->AddSystem(RAS); //------------------------------------------
+	a->AddSystem(RAS); //------------------------------------------*/
 	
 
 
@@ -92,7 +94,7 @@ int main()
 
 
 	
-	Facade* f = new Facade(a,DF,CE,car);
+	Facade* f = new Facade(td,DF,car);
 	int mode = 0;
 	while (mode!=5)
 	{
@@ -118,7 +120,6 @@ int main()
 		}
 		else if (mode == 4)
 		{
-			RAS->GetSystems(a->ReturnSystems());
 			f->DronActivateSystem(10);
 		}
 	}

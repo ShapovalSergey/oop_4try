@@ -13,6 +13,7 @@ private:
 
 
 public:
+	Dron() {};
 	Dron(string country, string model);
 	vector<ptrSystem> ReturnSystems();
 	void AddSystem(ISystem* newSystem);
@@ -20,6 +21,6 @@ public:
 	void ActivateSystem(int number);
 	void GetSensorInfo(int number);
 	int ReturnSenSize();
-	~Dron();
+	~Dron() {};
 };
 

@@ -143,6 +143,7 @@
     <ClCompile Include="Accelerator.cpp" />
     <ClCompile Include="Adapter.cpp" />
     <ClCompile Include="AdditionalCargo.cpp" />
+    <ClCompile Include="ArmyDronFactory.cpp" />
     <ClCompile Include="BarCreator.cpp" />
     <ClCompile Include="Barometr.cpp" />
     <ClCompile Include="Battery.cpp" />
@@ -151,6 +152,8 @@
     <ClCompile Include="ComCreator.cpp" />
     <ClCompile Include="Compas.cpp" />
     <ClCompile Include="CompositeEssential.cpp" />
+    <ClCompile Include="ConcreteCompositeEssential.cpp" />
+    <ClCompile Include="ConcreteDron.cpp" />
     <ClCompile Include="Dron.cpp" />
     <ClCompile Include="DroneFrame.cpp" />
     <ClCompile Include="Essential.cpp" />
@@ -158,6 +161,7 @@
     <ClCompile Include="FlySystem.cpp" />
     <ClCompile Include="GyrCreator.cpp" />
     <ClCompile Include="Gyroscope.cpp" />
+    <ClCompile Include="IDronFactory.cpp" />
     <ClCompile Include="ISystem.cpp" />
     <ClCompile Include="LeafEssential.cpp" />
     <ClCompile Include="NeutrillizeSystem.cpp" />
@@ -173,6 +177,7 @@
     <ClCompile Include="SensorImp.cpp" />
     <ClCompile Include="StabillizeSystem.cpp" />
     <ClCompile Include="TargetDetectionSystem.cpp" />
+    <ClCompile Include="TDron.cpp" />
     <ClCompile Include="TemCreator.cpp" />
     <ClCompile Include="Temperature.cpp" />
     <ClCompile Include="TransportInformation.cpp" />
@@ -183,6 +188,7 @@
     <ClInclude Include="Accelerator.h" />
     <ClInclude Include="Adapter.h" />
     <ClInclude Include="AdditionalCargo.h" />
+    <ClInclude Include="ArmyDronFactory.h" />
     <ClInclude Include="BarCreator.h" />
     <ClInclude Include="Barometr.h" />
     <ClInclude Include="Battery.h" />
@@ -192,6 +198,8 @@
     <ClInclude Include="ComCreator.h" />
     <ClInclude Include="Compas.h" />
     <ClInclude Include="CompositeEssential.h" />
+    <ClInclude Include="ConcreteCompositeEssential.h" />
+    <ClInclude Include="ConcreteDron.h" />
     <ClInclude Include="Creators.h" />
     <ClInclude Include="Dron.h" />
     <ClInclude Include="DroneFrame.h" />
@@ -201,6 +209,7 @@
     <ClInclude Include="GyrCreator.h" />
     <ClInclude Include="Gyroscope.h" />
     <ClInclude Include="Header.h" />
+    <ClInclude Include="IDronFactory.h" />
     <ClInclude Include="ISystem.h" />
     <ClInclude Include="LeafEssential.h" />
     <ClInclude Include="NeutrillizeSystem.h" />
@@ -217,6 +226,7 @@
     <ClInclude Include="StabillizeSystem.h" />
     <ClInclude Include="Systems.h" />
     <ClInclude Include="TargetDetectionSystem.h" />
+    <ClInclude Include="TDron.h" />
     <ClInclude Include="TemCreator.h" />
     <ClInclude Include="Temperature.h" />
     <ClInclude Include="TransportInformation.h" />
