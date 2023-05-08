@@ -19,6 +19,7 @@ public:
 	void AddSensor(Sensor* newSensor);
 	void ActivateSystem(int number);
 	void GetSensorInfo(int number);
+	int ReturnSenSize();
 	~Dron();
 };
 

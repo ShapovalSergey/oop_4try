@@ -32,3 +32,4 @@ void Dron::GetSensorInfo(int number)
 {
 	Sensor1[number]->PrintInfo();
 }
+int Dron::ReturnSenSize() { return Sensor1.size(); }; 

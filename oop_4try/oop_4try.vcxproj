@@ -139,13 +139,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AccCreator.cpp" />
     <ClCompile Include="Accelerator.cpp" />
     <ClCompile Include="Adapter.cpp" />
     <ClCompile Include="AdditionalCargo.cpp" />
+    <ClCompile Include="BarCreator.cpp" />
     <ClCompile Include="Barometr.cpp" />
     <ClCompile Include="Battery.cpp" />
     <ClCompile Include="Cargo.cpp" />
     <ClCompile Include="CipherSystem.cpp" />
+    <ClCompile Include="ComCreator.cpp" />
     <ClCompile Include="Compas.cpp" />
     <ClCompile Include="CompositeEssential.cpp" />
     <ClCompile Include="Dron.cpp" />
@@ -153,6 +156,7 @@
     <ClCompile Include="Essential.cpp" />
     <ClCompile Include="Facade.cpp" />
     <ClCompile Include="FlySystem.cpp" />
+    <ClCompile Include="GyrCreator.cpp" />
     <ClCompile Include="Gyroscope.cpp" />
     <ClCompile Include="ISystem.cpp" />
     <ClCompile Include="LeafEssential.cpp" />
@@ -165,29 +169,36 @@
     <ClCompile Include="RemoveInfoSystem.cpp" />
     <ClCompile Include="ScanSystem.cpp" />
     <ClCompile Include="Sensor.cpp" />
+    <ClCompile Include="SensorCreator.cpp" />
     <ClCompile Include="SensorImp.cpp" />
     <ClCompile Include="StabillizeSystem.cpp" />
     <ClCompile Include="TargetDetectionSystem.cpp" />
+    <ClCompile Include="TemCreator.cpp" />
     <ClCompile Include="Temperature.cpp" />
     <ClCompile Include="TransportInformation.cpp" />
     <ClCompile Include="TransportSuppliesSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AccCreator.h" />
     <ClInclude Include="Accelerator.h" />
     <ClInclude Include="Adapter.h" />
     <ClInclude Include="AdditionalCargo.h" />
+    <ClInclude Include="BarCreator.h" />
     <ClInclude Include="Barometr.h" />
     <ClInclude Include="Battery.h" />
     <ClInclude Include="Cargo.h" />
     <ClInclude Include="Cargos.h" />
     <ClInclude Include="CipherSystem.h" />
+    <ClInclude Include="ComCreator.h" />
     <ClInclude Include="Compas.h" />
     <ClInclude Include="CompositeEssential.h" />
+    <ClInclude Include="Creators.h" />
     <ClInclude Include="Dron.h" />
     <ClInclude Include="DroneFrame.h" />
     <ClInclude Include="Essential.h" />
     <ClInclude Include="Facade.h" />
     <ClInclude Include="FlySystem.h" />
+    <ClInclude Include="GyrCreator.h" />
     <ClInclude Include="Gyroscope.h" />
     <ClInclude Include="Header.h" />
     <ClInclude Include="ISystem.h" />
@@ -200,11 +211,13 @@
     <ClInclude Include="RemoveInfoSystem.h" />
     <ClInclude Include="ScanSystem.h" />
     <ClInclude Include="Sensor.h" />
+    <ClInclude Include="SensorCreator.h" />
     <ClInclude Include="SensorImp.h" />
     <ClInclude Include="Sensors.h" />
     <ClInclude Include="StabillizeSystem.h" />
     <ClInclude Include="Systems.h" />
     <ClInclude Include="TargetDetectionSystem.h" />
+    <ClInclude Include="TemCreator.h" />
     <ClInclude Include="Temperature.h" />
     <ClInclude Include="TransportInformation.h" />
     <ClInclude Include="TransportSuppliesSystem.h" />

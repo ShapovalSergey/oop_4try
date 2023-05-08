@@ -1,11 +1,11 @@
 #include "Facade.h"
 
-Facade::Facade(Dron* dron, DroneFrame* DF, CompositeEssential CE, vector<Sensor*> sen, vector<Cargo*> car)
+Facade::Facade(Dron* dron, DroneFrame* DF, CompositeEssential CE,  vector<Cargo*> car)
 {
 	this->CE = CE;
 	this->dron = dron;
 	this->DF = DF;
-	this->sen = sen;
+	//this->sen = sen;
 	this->car = car;
 }
 void Facade::GetSensorInfo(int number) 
@@ -28,5 +28,5 @@ void Facade::GetEssentialInfo()
 	CE.Display();
 }
 
-int Facade::RetSenSize() { return sen.size(); }
+int Facade::RetSenSize() { return dron->ReturnSenSize(); }
 int Facade::RetCarSize() { return car.size(); }

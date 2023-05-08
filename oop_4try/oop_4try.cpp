@@ -4,6 +4,8 @@
 //#include "Header.h"
 #include "Facade.h"
 #include "Sensors.h"
+//#include "AccCreator.h"
+#include "Creators.h"
 #include "Systems.h"
 //#include "Dron.h"
 #include "Cargos.h"
@@ -15,21 +17,27 @@
 
 int main()
 {
+	SensorCreator* SC = new AccCreator();
+	SensorCreator* SC1 = new BarCreator();
+	SensorCreator* SC2 = new ComCreator();
+	SensorCreator* SC3 = new GyrCreator();
+	SensorCreator* SC4 = new TemCreator();
+
 	setlocale(LC_ALL, "Russian");
 	Dron* a = new Dron("Россия", "ФБВ-1"); //Создание Дрона
-	Accelerator* acc = new Accelerator("A1-09-31"); // Создание датчика ускорения
+	/*Accelerator* acc = new Accelerator("A1-09-31"); // Создание датчика ускорения
 	Barometr* bar = new Barometr("B2-09-09"); //Создание датчика высоты 
 	Gyroscope* gyro = new Gyroscope("G3-98-67"); //Создание датчика угла наклона
 	Compas* com = new Compas("C4-01-90"); // Создание датчика направления движения
 	Temperature* t = new Temperature("T5-66-01"); //Создание датчика температуры
-	Adapter* adp = new Adapter(t); //Созданиие адаптера для работы с независимым датчиком как с обычным
+	Adapter* adp = new Adapter(t); //Созданиие адаптера для работы с независимым датчиком как с обычным*/
 	vector<Sensor*> sen; 
 	vector<Cargo*> car;
-	sen.push_back(new Sensor(adp));
-	sen.push_back(new Sensor(acc));
-	sen.push_back(new Sensor(bar));
-	sen.push_back(new Sensor(gyro));
-	sen.push_back(new Sensor(com));
+	sen.push_back(SC4->Create("T5-66-01"));
+	sen.push_back(SC->Create("A1-09-31"));
+	sen.push_back(SC1->Create("B2-09-09"));
+	sen.push_back(SC3->Create("G3-98-67"));
+	sen.push_back(SC2->Create("C4-01-90"));
 	DroneFrame* DF = new DroneFrame("Каркас",25); //Создание базового объекта - каркас дрона, к которому в последствии добавляются другие компоненты
 	car.push_back(new DroneFrame("Каркас", 25));
 	car.push_back(new Patrons(DF, "Патроны", 5));
@@ -75,9 +83,16 @@ int main()
 	a->AddSystem(TIS); //
 	a->AddSystem(RAS); //------------------------------------------
 	
+
+
+
+
+
+
+
+
 	
-	
-	Facade* f = new Facade(a,DF,CE,sen,car);
+	Facade* f = new Facade(a,DF,CE,car);
 	int mode = 0;
 	while (mode!=5)
 	{
