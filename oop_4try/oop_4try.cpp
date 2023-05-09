@@ -2,6 +2,7 @@
 //
 #pragma once
 //#include "Header.h"
+#include "Patron_7x62.h"
 #include "Facade.h"
 #include "Sensors.h"
 #include "ArmyDronFactory.h"
@@ -92,8 +93,17 @@ int main()
 	s->run();
 	d->run();
 
+	Patron_7x62* p1 = new Patron_7x62();
 
-
+	vector<Patron*> mag;
+	for (int i = 0; i < 30; i++)
+	{
+		mag.push_back(p1->clone());
+	}
+	for (int i = 0; i < 30; i++)
+	{
+		mag[i]->ReturnInfo();
+	}
 
 
 

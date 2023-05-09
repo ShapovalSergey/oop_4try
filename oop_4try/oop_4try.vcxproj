@@ -167,7 +167,9 @@
     <ClCompile Include="NeutrillizeSystem.cpp" />
     <ClCompile Include="oop_4try.cpp" />
     <ClCompile Include="OppositionSystem.cpp" />
+    <ClCompile Include="Patron.cpp" />
     <ClCompile Include="Patrons.cpp" />
+    <ClCompile Include="Patron_7x62.cpp" />
     <ClCompile Include="RemoteAccessProxy.cpp" />
     <ClCompile Include="RemoteAccessSystem.cpp" />
     <ClCompile Include="RemoveInfoSystem.cpp" />
@@ -215,7 +217,9 @@
     <ClInclude Include="LeafEssential.h" />
     <ClInclude Include="NeutrillizeSystem.h" />
     <ClInclude Include="OppositionSystem.h" />
+    <ClInclude Include="Patron.h" />
     <ClInclude Include="Patrons.h" />
+    <ClInclude Include="Patron_7x62.h" />
     <ClInclude Include="RemoteAccessProxy.h" />
     <ClInclude Include="RemoteAccessSystem.h" />
     <ClInclude Include="RemoveInfoSystem.h" />
