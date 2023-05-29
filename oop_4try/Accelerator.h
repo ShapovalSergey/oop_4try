@@ -13,6 +13,5 @@ public:
 	string GetName();
 	string GetType();
 	void WriteValue();
-
 };
 

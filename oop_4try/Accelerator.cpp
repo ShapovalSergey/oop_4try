@@ -24,10 +24,11 @@ string Accelerator::GetType()
 	return "Датчик ускорения";
 }
 
-void Accelerator::WriteValue() 
+void Accelerator::WriteValue()
 {
 	printf("Write to file\n");
 }
+
 
 double Accelerator::GetValue() 
 {
@@ -36,5 +37,6 @@ double Accelerator::GetValue()
 	{
 		result += this->Analyze();
 	}
+
 	return result / 10.0;
 }

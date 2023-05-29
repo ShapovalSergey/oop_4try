@@ -13,32 +13,31 @@
 //#include "CompositeEssential.h"
 #include "LeafEssential.h"
 #include "SysLog.h"
+#include "Caretaker.h"
 
 
 
 int main()
 {
-	/*SensorCreator* SC = new AccCreator();
-	SensorCreator* SC1 = new BarCreator();
-	SensorCreator* SC2 = new ComCreator();
-	SensorCreator* SC3 = new GyrCreator();
-	SensorCreator* SC4 = new TemCreator();*/
+
 	ArmyDronFactory* a = new ArmyDronFactory();
 	TDron* td = a->createDron("Россия", "ФБВ-1");
 	setlocale(LC_ALL, "Russian");
-	//Dron* a = new Dron("Россия", "ФБВ-1"); //Создание Дрона
-	/*Accelerator* acc = new Accelerator("A1-09-31"); // Создание датчика ускорения
-	Barometr* bar = new Barometr("B2-09-09"); //Создание датчика высоты 
-	Gyroscope* gyro = new Gyroscope("G3-98-67"); //Создание датчика угла наклона
-	Compas* com = new Compas("C4-01-90"); // Создание датчика направления движения
-	Temperature* t = new Temperature("T5-66-01"); //Создание датчика температуры
-	Adapter* adp = new Adapter(t); //Созданиие адаптера для работы с независимым датчиком как с обычным*/
-	/*vector<Sensor*> sen;
-	sen.push_back(SC4->Create("T5-66-01"));
-	sen.push_back(SC->Create("A1-09-31"));
-	sen.push_back(SC1->Create("B2-09-09"));
-	sen.push_back(SC3->Create("G3-98-67"));
-	sen.push_back(SC2->Create("C4-01-90"));*/
+
+	CompositeEssential* ce1 = new CompositeEssential();
+	LeafEssential* prop1 = new LeafEssential("Пропеллер1"); //Создание пропеллера 1
+	LeafEssential* prop2 = new LeafEssential("Пропеллер2"); //Создание пропеллера 2
+	LeafEssential* engine = new LeafEssential("Двигатель"); //Создание двигателя
+	LeafEssential* stoi = new LeafEssential("Стойки");  //Создание стойки для посадки 
+	LeafEssential* leftwing = new LeafEssential("Левое крыло");  //Создание стойки для посадки 
+	LeafEssential* rightwing = new LeafEssential("Правое крыло");  //Создание стойки для посадки 
+	ce1->Add(prop1);
+	ce1->Add(prop2);
+	ce1->Add(engine);
+	ce1->Add(stoi);
+	ce1->Add(leftwing);
+	ce1->Add(rightwing);
+
 
 	vector<Cargo*> car;
 	DroneFrame* DF = new DroneFrame("Каркас",25); //Создание базового объекта - каркас дрона, к которому в последствии добавляются другие компоненты
@@ -46,45 +45,6 @@ int main()
 	car.push_back(new Patrons(DF, "Патроны", 5));
 	car.push_back(new Battery(DF, "Аккумулятор", 15));
 	car.push_back(new Patrons(DF, "Патроны", 10));
-	/*CompositeEssential CE; //Создание компоновщика необходдимых частей
-	LeafEssential* prop1 = new LeafEssential("Пропеллер1"); //Создание пропеллера 1
-	LeafEssential* prop2 = new LeafEssential("Пропеллер2"); //Создание пропеллера 2
-	LeafEssential* prop3 = new LeafEssential("Пропеллер3"); //Создание пропеллера 3
-	LeafEssential* prop4 = new LeafEssential("Пропеллер4"); //Создание пропеллера 4
-	LeafEssential* engine = new LeafEssential("Двигатель"); //Создание двигателя
-	LeafEssential* stoi = new LeafEssential("Стойки");  //Создание стойки для посадки 
-	CE.Add(prop1); //Добавление пропеллера 1
-	CE.Add(prop2); //Добавление пропеллера 2
-	CE.Add(prop3); //Добавление пропеллера 3
-	CE.Add(prop4); //Добавление пропеллера 4
-	CE.Add(engine); //Добавление двигателя
-	CE.Add(stoi); //Добавление стойки для посадки
-	CipherSystem* CS = new CipherSystem; //Создание системы шифрования
-	FlySystem* FS = new FlySystem; //Создание системы управления поллетом
-	NeutrillizeSystem* NS = new NeutrillizeSystem; //Создание системы уничтожения цели
-	OppositionSystem* OS = new OppositionSystem; //Создание системы противодействия перехвату
-	RemoveInfoSystem* RIS = new RemoveInfoSystem; //Создание системы удаления информации
-	ScanSystem* ScanS = new ScanSystem; //Создание системы сканирования
-	StabillizeSystem* StabS = new StabillizeSystem; //Создание системы стабилизации полета
-	TargetDetectionSystem* TDS = new TargetDetectionSystem; //Создание системы определения цели
-	TransportSuppliesSystem* TSS = new TransportSuppliesSystem; //Создание системы доставки груза
-	TransportInformation* TIS = new TransportInformation; //Создание системы передачи информации 
-	RemoteAccessProxy* RAS = new RemoteAccessProxy; //Создание системы удаленного доступа с использованием класса-заместителя (proxy)
-	for (int i = 0; i < sen.size(); i++)
-	{
-		a->AddSensor(sen[i]);
-	}
-	a->AddSystem(CS); //-------------------------------------------
-	a->AddSystem(FS); //
-	a->AddSystem(NS); //
-	a->AddSystem(OS); //
-	a->AddSystem(RIS); //
-	a->AddSystem(ScanS); //Добавлление систем к дрону
-	a->AddSystem(StabS); //
-	a->AddSystem(TDS); //
-	a->AddSystem(TSS); //
-	a->AddSystem(TIS); //
-	a->AddSystem(RAS); //------------------------------------------*/
 	
 
 	SysLog* s = SysLog::Instance("Системный журнал1");
@@ -108,9 +68,9 @@ int main()
 
 
 
-	
+	Caretaker* ct=new Caretaker();
 	Facade* f = new Facade(td,DF,car);
-	int mode = 0;
+	int mode = 0,counter=0;
 	while (mode!=5)
 	{
 		printf("Выберите, что вы хотите сделать\n1)Получить информацию с датчиков\n2)Получить информацию о деталях\n3)Получить информацию о грузах\n4)Подключиться удаленно к дрону\n5)Завершить работу\n");
@@ -124,6 +84,14 @@ int main()
 		}
 		else if (mode==2)
 		{
+			ct->AddState(f->RetCE()->SaveState());
+			printf("Начальное состояние\n");
+			f->GetEssentialInfo();
+			f->SetEssentials(ce1);
+			printf("Измененное состояние\n");
+			f->GetEssentialInfo();
+			f->RetCE()->RestoreState(ct->GetState(0));
+			printf("Восстановленное первоначальное состояние\n");
 			f->GetEssentialInfo();
 		}
 		else if (mode == 3)

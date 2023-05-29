@@ -1,5 +1,6 @@
 #pragma once
 #include "Essential.h"
+#include "Memento.h"
 class CompositeEssential :
     public Essential
 {
@@ -10,6 +11,7 @@ public:
 	void Remove(Essential* leaf);
 	virtual void Display();
 	virtual void Composition();
-
+	Memento* SaveState();
+	void RestoreState(Memento* m);
 };
 

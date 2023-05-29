@@ -25,3 +25,6 @@ void CompositeEssential::Composition() {
 		(*iter)->Composition();
 	printf("\n");
 }
+
+Memento* CompositeEssential::SaveState() { return new Memento(children); };
+void CompositeEssential::RestoreState(Memento* m) { this->children = m->GetList(); };

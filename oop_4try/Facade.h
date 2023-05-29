@@ -20,7 +20,9 @@ public:
 	void DronActivateSystem(int number);
 	void GetCargoInfo(int number);
 	void GetEssentialInfo();
+	void SetEssentials(CompositeEssential* CE) { this->CE = CE; };
 	int RetSenSize();
 	int RetCarSize();
+	CompositeEssential* RetCE() { return CE; };
 };
 

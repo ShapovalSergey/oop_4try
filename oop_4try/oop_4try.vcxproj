@@ -147,6 +147,7 @@
     <ClCompile Include="BarCreator.cpp" />
     <ClCompile Include="Barometr.cpp" />
     <ClCompile Include="Battery.cpp" />
+    <ClCompile Include="Caretaker.cpp" />
     <ClCompile Include="Cargo.cpp" />
     <ClCompile Include="CipherSystem.cpp" />
     <ClCompile Include="ComCreator.cpp" />
@@ -162,8 +163,10 @@
     <ClCompile Include="GyrCreator.cpp" />
     <ClCompile Include="Gyroscope.cpp" />
     <ClCompile Include="IDronFactory.cpp" />
+    <ClCompile Include="IState.cpp" />
     <ClCompile Include="ISystem.cpp" />
     <ClCompile Include="LeafEssential.cpp" />
+    <ClCompile Include="Memento.cpp" />
     <ClCompile Include="NeutrillizeSystem.cpp" />
     <ClCompile Include="oop_4try.cpp" />
     <ClCompile Include="OppositionSystem.cpp" />
@@ -178,6 +181,8 @@
     <ClCompile Include="SensorCreator.cpp" />
     <ClCompile Include="SensorImp.cpp" />
     <ClCompile Include="StabillizeSystem.cpp" />
+    <ClCompile Include="StateGun.cpp" />
+    <ClCompile Include="StateRocket.cpp" />
     <ClCompile Include="SysLog.cpp" />
     <ClCompile Include="TargetDetectionSystem.cpp" />
     <ClCompile Include="TDron.cpp" />
@@ -195,6 +200,7 @@
     <ClInclude Include="BarCreator.h" />
     <ClInclude Include="Barometr.h" />
     <ClInclude Include="Battery.h" />
+    <ClInclude Include="Caretaker.h" />
     <ClInclude Include="Cargo.h" />
     <ClInclude Include="Cargos.h" />
     <ClInclude Include="CipherSystem.h" />
@@ -213,8 +219,10 @@
     <ClInclude Include="Gyroscope.h" />
     <ClInclude Include="Header.h" />
     <ClInclude Include="IDronFactory.h" />
+    <ClInclude Include="IState.h" />
     <ClInclude Include="ISystem.h" />
     <ClInclude Include="LeafEssential.h" />
+    <ClInclude Include="Memento.h" />
     <ClInclude Include="NeutrillizeSystem.h" />
     <ClInclude Include="OppositionSystem.h" />
     <ClInclude Include="Patron.h" />
@@ -229,6 +237,8 @@
     <ClInclude Include="SensorImp.h" />
     <ClInclude Include="Sensors.h" />
     <ClInclude Include="StabillizeSystem.h" />
+    <ClInclude Include="StateGun.h" />
+    <ClInclude Include="StateRocket.h" />
     <ClInclude Include="SysLog.h" />
     <ClInclude Include="Systems.h" />
     <ClInclude Include="TargetDetectionSystem.h" />
