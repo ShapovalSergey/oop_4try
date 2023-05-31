@@ -1,5 +1,5 @@
 #include "ScanSystem.h"
-
+#include "IVisitor.h"
 void ScanSystem::doSomething()
 {
 	printf("Сканирует местность\n");
@@ -26,3 +26,4 @@ void ScanSystem::StopScanning()
 }
 
 string ScanSystem::returnStringName() { return "Scan"; }
+void ScanSystem::Accept(IVisitor* iv) { iv->Visit(this); }

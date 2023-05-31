@@ -12,5 +12,6 @@ public:
 	void returnName();
 	void ChangeState(IState* is);
 	string returnStringName();
+	void Accept(IVisitor* iv);
 };
 

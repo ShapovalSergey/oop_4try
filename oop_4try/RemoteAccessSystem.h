@@ -1,4 +1,5 @@
 #pragma once
+class ConcreateVisitor;
 #include "ISystem.h"
 #include "Invoker.h"
 #include "ScanCommand.h"
@@ -15,5 +16,6 @@ public:
 	void returnName();
 	void GetSystems(vector<ptrSystem> System);
 	string returnStringName();
+	void Accept(IVisitor* iv);
 };
 

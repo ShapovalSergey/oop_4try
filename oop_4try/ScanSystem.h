@@ -9,5 +9,6 @@ public:
 	void StartScanning(int time);
 	void StopScanning();
 	string returnStringName();
+	void Accept(IVisitor* iv);
 };
 

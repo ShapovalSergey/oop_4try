@@ -3,8 +3,10 @@
 class TransportInformation :
     public ISystem
 {
+public:
     void doSomething();
     void returnName();
     string returnStringName();
+    void Accept(IVisitor* iv);
 };
 

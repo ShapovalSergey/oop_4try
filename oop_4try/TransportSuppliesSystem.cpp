@@ -1,5 +1,5 @@
 #include "TransportSuppliesSystem.h"
-
+#include "IVisitor.h"
 void TransportSuppliesSystem::doSomething()
 {
 	printf("Доставил груз\n");
@@ -11,3 +11,4 @@ void TransportSuppliesSystem::returnName()
 }
 
 string TransportSuppliesSystem::returnStringName() { return "TransportSupplies"; }
+void TransportSuppliesSystem::Accept(IVisitor* iv) { iv->Visit(this); }

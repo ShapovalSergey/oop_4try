@@ -1,5 +1,5 @@
 #include "NeutrillizeSystem.h"
-
+#include "IVisitor.h"
 void NeutrillizeSystem::doSomething()
 {
 	int mode;
@@ -29,3 +29,4 @@ void NeutrillizeSystem::ChangeState(IState* is)
 }
 
 string NeutrillizeSystem::returnStringName() { return "Neutrillize"; }
+void NeutrillizeSystem::Accept(IVisitor* iv) { iv->Visit(this); }

@@ -13,5 +13,6 @@ public:
 	void GetSystems(vector<ptrSystem> System);
 	~RemoteAccessProxy();
 	string returnStringName();
+	void Accept(IVisitor* iv);
 };
 

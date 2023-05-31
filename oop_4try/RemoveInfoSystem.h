@@ -3,8 +3,10 @@
 class RemoveInfoSystem :
     public ISystem
 {
+public:
     void doSomething();
     void returnName();
     string returnStringName();
+    void Accept(IVisitor* iv);
 };
 

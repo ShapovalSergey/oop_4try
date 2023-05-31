@@ -7,5 +7,6 @@ public:
 	void doSomething();
 	void returnName();
 	string returnStringName();
+	void Accept(IVisitor* iv);
 };
 

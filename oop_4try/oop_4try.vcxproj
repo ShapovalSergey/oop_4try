@@ -153,6 +153,7 @@
     <ClCompile Include="ComCreator.cpp" />
     <ClCompile Include="Compas.cpp" />
     <ClCompile Include="CompositeEssential.cpp" />
+    <ClCompile Include="ConcreateVisitor.cpp" />
     <ClCompile Include="ConcreteCompositeEssential.cpp" />
     <ClCompile Include="ConcreteDron.cpp" />
     <ClCompile Include="Dron.cpp" />
@@ -167,6 +168,7 @@
     <ClCompile Include="Invoker.cpp" />
     <ClCompile Include="IState.cpp" />
     <ClCompile Include="ISystem.cpp" />
+    <ClCompile Include="IVisitor.cpp" />
     <ClCompile Include="LeafEssential.cpp" />
     <ClCompile Include="Memento.cpp" />
     <ClCompile Include="NeutrillizeSystem.cpp" />
@@ -210,6 +212,7 @@
     <ClInclude Include="ComCreator.h" />
     <ClInclude Include="Compas.h" />
     <ClInclude Include="CompositeEssential.h" />
+    <ClInclude Include="ConcreateVisitor.h" />
     <ClInclude Include="ConcreteCompositeEssential.h" />
     <ClInclude Include="ConcreteDron.h" />
     <ClInclude Include="Creators.h" />
@@ -226,6 +229,7 @@
     <ClInclude Include="Invoker.h" />
     <ClInclude Include="IState.h" />
     <ClInclude Include="ISystem.h" />
+    <ClInclude Include="IVisitor.h" />
     <ClInclude Include="LeafEssential.h" />
     <ClInclude Include="Memento.h" />
     <ClInclude Include="NeutrillizeSystem.h" />

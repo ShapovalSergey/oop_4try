@@ -1,5 +1,5 @@
 #include "RemoteAccessProxy.h"
-
+#include "IVisitor.h"
 RemoteAccessProxy::RemoteAccessProxy()
 {
 	RealObject = new RemoteAccessSystem;
@@ -45,3 +45,4 @@ RemoteAccessProxy::~RemoteAccessProxy()
 };
 
 string RemoteAccessProxy::returnStringName() { return "RemoteAccessProxy"; }
+void RemoteAccessProxy::Accept(IVisitor* iv) { iv->Visit(this); }

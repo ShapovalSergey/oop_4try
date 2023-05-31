@@ -1,5 +1,6 @@
 #include "RemoteAccessSystem.h"
-
+#include "ConcreateVisitor.h"
+#include "IVisitor.h"
 void RemoteAccessSystem::doSomething()
 {
 	int mode = -1;
@@ -15,6 +16,7 @@ void RemoteAccessSystem::doSomething()
 		scanf_s("%d", &mode);
 		if ((mode > -1) && (mode < System.size()))
 		{
+			IVisitor* iv = new ConcreateVisitor();
 			if (System[mode-1]->returnStringName()=="Scan")
 			{
 				Invoker* carl = new Invoker();
@@ -28,7 +30,7 @@ void RemoteAccessSystem::doSomething()
 			else
 			{
 				printf("----Начало выполнения системы----\n");
-				System[mode - 1]->doSomething();
+				System[mode - 1]->Accept(iv);
 				printf("----Конец выполнения системы----\n");
 			}
 		}
@@ -46,3 +48,4 @@ void RemoteAccessSystem::GetSystems(vector<ptrSystem> System)
 };
 
 string RemoteAccessSystem::returnStringName() { return "RemoteAccess"; }
+void RemoteAccessSystem::Accept(IVisitor* iv) { iv->Visit(this); }
