@@ -8,3 +8,4 @@ void CipherSystem::returnName()
 {
 	printf("Cipher");
 }
+string CipherSystem::returnStringName() { return "Cipher"; }

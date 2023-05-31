@@ -6,5 +6,6 @@ class TransportSuppliesSystem :
 public:
 	void doSomething();
 	void returnName();
+	string returnStringName();
 };
 

@@ -7,5 +7,6 @@ class OppositionSystem :
 public:
 	void doSomething();
 	void returnName();
+	string returnStringName();
 };
 

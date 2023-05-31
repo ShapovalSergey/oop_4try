@@ -9,3 +9,6 @@ void RemoveInfoSystem::returnName()
 {
 	printf("Removing");
 };
+
+
+string RemoveInfoSystem::returnStringName() { return "RemoveInfo"; }

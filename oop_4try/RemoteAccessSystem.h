@@ -1,5 +1,7 @@
 #pragma once
 #include "ISystem.h"
+#include "Invoker.h"
+#include "ScanCommand.h"
 typedef ISystem* ptrSystem;
 
 class RemoteAccessSystem :
@@ -12,5 +14,6 @@ public:
 	void doSomething();
 	void returnName();
 	void GetSystems(vector<ptrSystem> System);
+	string returnStringName();
 };
 

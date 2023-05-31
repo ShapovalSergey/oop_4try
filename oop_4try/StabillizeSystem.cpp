@@ -9,3 +9,5 @@ void StabillizeSystem::returnName()
 {
 	printf("Stabillizing");
 }
+
+string StabillizeSystem::returnStringName() { return "Stabillize"; }

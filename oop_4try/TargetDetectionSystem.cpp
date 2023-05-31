@@ -9,3 +9,5 @@ void TargetDetectionSystem::returnName()
 {
 	printf("TargetDetection");
 };
+
+string TargetDetectionSystem::returnStringName() { return "TargetDetection"; }

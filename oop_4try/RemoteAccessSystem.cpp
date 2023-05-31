@@ -15,9 +15,22 @@ void RemoteAccessSystem::doSomething()
 		scanf_s("%d", &mode);
 		if ((mode > -1) && (mode < System.size()))
 		{
-			printf("----Начало выполнения системы----\n");
-			System[mode - 1]->doSomething();
-			printf("----Конец выполнения системы----\n");
+			if (System[mode-1]->returnStringName()=="Scan")
+			{
+				Invoker* carl = new Invoker();
+				ScanCommand* sc = new ScanCommand();
+				sc->SetTime(5000);
+				sc->SetSystem(new ScanSystem);
+				carl->SetCommand(sc);
+				carl->Start();
+				carl->End();
+			}
+			else
+			{
+				printf("----Начало выполнения системы----\n");
+				System[mode - 1]->doSomething();
+				printf("----Конец выполнения системы----\n");
+			}
 		}
 	}
 }
@@ -31,3 +44,5 @@ void RemoteAccessSystem::GetSystems(vector<ptrSystem> System)
 {
 	this->System = System;
 };
+
+string RemoteAccessSystem::returnStringName() { return "RemoteAccess"; }

@@ -8,3 +8,5 @@ void FlySystem::returnName()
 {
 	printf("Fly");
 }
+
+string FlySystem::returnStringName() { return "Fly"; }

@@ -6,5 +6,6 @@ class StabillizeSystem :
 public:
 	void doSomething();
 	void returnName();
+	string returnStringName();
 };
 

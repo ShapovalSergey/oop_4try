@@ -11,5 +11,6 @@ public:
 	void doSomething();
 	void returnName();
 	void ChangeState(IState* is);
+	string returnStringName();
 };
 

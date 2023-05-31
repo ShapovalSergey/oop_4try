@@ -6,5 +6,8 @@ class ScanSystem :
 public:
 	void doSomething();
 	void returnName();
+	void StartScanning(int time);
+	void StopScanning();
+	string returnStringName();
 };
 

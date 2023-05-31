@@ -9,3 +9,5 @@ void OppositionSystem::returnName()
 {
 	printf("Opposition");
 };
+
+string OppositionSystem::returnStringName() { return "Opposition"; }

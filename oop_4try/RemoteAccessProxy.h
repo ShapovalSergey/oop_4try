@@ -12,5 +12,6 @@ public:
 	void returnName();
 	void GetSystems(vector<ptrSystem> System);
 	~RemoteAccessProxy();
+	string returnStringName();
 };
 

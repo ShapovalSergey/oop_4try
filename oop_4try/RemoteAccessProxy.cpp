@@ -43,3 +43,5 @@ RemoteAccessProxy::~RemoteAccessProxy()
 {
 	delete RealObject;
 };
+
+string RemoteAccessProxy::returnStringName() { return "RemoteAccessProxy"; }

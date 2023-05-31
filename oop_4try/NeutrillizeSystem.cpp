@@ -27,3 +27,5 @@ void NeutrillizeSystem::ChangeState(IState* is)
 {
 	this->is = is;
 }
+
+string NeutrillizeSystem::returnStringName() { return "Neutrillize"; }

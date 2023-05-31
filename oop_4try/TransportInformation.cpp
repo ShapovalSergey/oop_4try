@@ -9,3 +9,5 @@ void TransportInformation::returnName()
 {
 	printf("TransportInfo");
 };
+
+string TransportInformation::returnStringName() { return "TransportInformation"; }

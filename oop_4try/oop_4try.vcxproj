@@ -162,7 +162,9 @@
     <ClCompile Include="FlySystem.cpp" />
     <ClCompile Include="GyrCreator.cpp" />
     <ClCompile Include="Gyroscope.cpp" />
+    <ClCompile Include="ICommand.cpp" />
     <ClCompile Include="IDronFactory.cpp" />
+    <ClCompile Include="Invoker.cpp" />
     <ClCompile Include="IState.cpp" />
     <ClCompile Include="ISystem.cpp" />
     <ClCompile Include="LeafEssential.cpp" />
@@ -176,6 +178,7 @@
     <ClCompile Include="RemoteAccessProxy.cpp" />
     <ClCompile Include="RemoteAccessSystem.cpp" />
     <ClCompile Include="RemoveInfoSystem.cpp" />
+    <ClCompile Include="ScanCommand.cpp" />
     <ClCompile Include="ScanSystem.cpp" />
     <ClCompile Include="Sensor.cpp" />
     <ClCompile Include="SensorCreator.cpp" />
@@ -218,7 +221,9 @@
     <ClInclude Include="GyrCreator.h" />
     <ClInclude Include="Gyroscope.h" />
     <ClInclude Include="Header.h" />
+    <ClInclude Include="ICommand.h" />
     <ClInclude Include="IDronFactory.h" />
+    <ClInclude Include="Invoker.h" />
     <ClInclude Include="IState.h" />
     <ClInclude Include="ISystem.h" />
     <ClInclude Include="LeafEssential.h" />
@@ -231,6 +236,7 @@
     <ClInclude Include="RemoteAccessProxy.h" />
     <ClInclude Include="RemoteAccessSystem.h" />
     <ClInclude Include="RemoveInfoSystem.h" />
+    <ClInclude Include="ScanCommand.h" />
     <ClInclude Include="ScanSystem.h" />
     <ClInclude Include="Sensor.h" />
     <ClInclude Include="SensorCreator.h" />

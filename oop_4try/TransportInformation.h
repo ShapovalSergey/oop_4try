@@ -5,5 +5,6 @@ class TransportInformation :
 {
     void doSomething();
     void returnName();
+    string returnStringName();
 };
 

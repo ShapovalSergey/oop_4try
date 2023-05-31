@@ -5,5 +5,6 @@ class RemoveInfoSystem :
 {
     void doSomething();
     void returnName();
+    string returnStringName();
 };
 

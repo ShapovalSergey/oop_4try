@@ -7,4 +7,5 @@ class CipherSystem :
 public:
 	void doSomething();
 	void returnName();
+	string returnStringName();
 };

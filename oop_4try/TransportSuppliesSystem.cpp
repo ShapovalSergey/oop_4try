@@ -9,3 +9,5 @@ void TransportSuppliesSystem::returnName()
 {
 	printf("TransportSupplies");
 }
+
+string TransportSuppliesSystem::returnStringName() { return "TransportSupplies"; }
